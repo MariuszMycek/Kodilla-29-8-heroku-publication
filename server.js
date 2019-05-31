@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/nodeappdatabase', {
+mongoose.connect('mongodb+srv://dbUser:<password>@cluster0-ejib9.mongodb.net/test?retryWrites=true&w=majority', {
   useMongoClient: true
 });
 
