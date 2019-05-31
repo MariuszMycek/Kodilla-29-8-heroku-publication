@@ -2,9 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://dbUser:8HmkrcqDKRznUX8b@cluster0-ejib9.mongodb.net/test?retryWrites=true&w=majority', {
-  useMongoClient: true
-});
+mongoose.connect(
+  'mongodb+srv://dbUser:8HmkrcqDKRznUX8b@cluster0-ejib9.mongodb.net/test?retryWrites=true&w=majority',
+  {
+    useMongoClient: true
+  }
+);
 
 //new user Schema
 const userSchema = new Schema({
@@ -108,7 +111,7 @@ const updateUsername = function() {
   return User.findOneAndUpdate(
     { username: 'Benny_the_boy' },
     { username: 'Benny_the_man' },
-    { new: true },
+    { returnOriginal: false },
     function(err, user) {
       if (err) throw err;
       console.log('Nazwa uzytkownika po aktualizacji to ' + user.username);
