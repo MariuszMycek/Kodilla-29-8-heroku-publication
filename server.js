@@ -111,7 +111,7 @@ const updateUsername = function() {
     { new: true },
     function(err, user) {
       if (err) throw err;
-      console.log('Nazwa uzytkownika po aktualizacji to ' + user.name);
+      console.log('Nazwa uzytkownika po aktualizacji to ' + user.username);
     }
   );
 };
